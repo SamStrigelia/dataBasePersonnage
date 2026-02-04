@@ -24,6 +24,11 @@ namespace dataBasePersonnages
             cmbPouvoir.Visible = false;
             lblVie.Visible = false;
             nudVie.Visible = false;
+
+            // Initialiser la ComboBox avec des pouvoirs
+            cmbPouvoir.Items.Add("Vol");
+            cmbPouvoir.Items.Add("Force surhumaine");
+            cmbPouvoir.Items.Add("Télépathie");
         }
 
         #region Classes Personnage, Humain et Xmen
