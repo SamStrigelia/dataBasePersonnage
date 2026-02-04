@@ -55,6 +55,7 @@ namespace dataBasePersonnages
 
         }
 
+
         public class Humain : Personnage
         {
             // Propriétés
