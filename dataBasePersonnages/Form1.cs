@@ -32,7 +32,7 @@ namespace dataBasePersonnages
         }
 
         // Création d'un tableau pour stocker les personnages
-        Personnage[] lesPersonnages = new Personnage[100];
+        List<Personnage> lesPersonnages = new List<Personnage>();
         // Variable globale pour suivre le nombre de personnages ajoutés
         int nbPersos = 0;
 
@@ -166,14 +166,14 @@ namespace dataBasePersonnages
                 {
                     //Création d'un Humain inconnu
                     Humain h = new Humain((int)nudVie.Value);
-                    lesPersonnages[nbPersos] = h;
+                    lesPersonnages.Add(h);
                     lstPersonnage.Items.Add(h.info());
                 }
                 else
                 {
                     //Création d'un Humain
                     Humain h = new Humain(txtLogin.Text, (int)nudVie.Value);
-                    lesPersonnages[nbPersos] = h;
+                    lesPersonnages.Add(h);
                     lstPersonnage.Items.Add(h.info());
                 }
             }
@@ -183,14 +183,14 @@ namespace dataBasePersonnages
                 {
                     //Création d'un Xmen inconnu
                     Xmen x = new Xmen(cmbPouvoir.SelectedItem.ToString());
-                    lesPersonnages[nbPersos] = x;
+                    lesPersonnages.Add(x);
                     lstPersonnage.Items.Add(x.info());
                 }
                 else
                 {
                     //Création d'un Xmen
                     Xmen x = new Xmen(txtLogin.Text, cmbPouvoir.SelectedItem.ToString());
-                    lesPersonnages[nbPersos] = x;
+                    lesPersonnages.Add(x);
                     lstPersonnage.Items.Add(x.info());
                 }
             }
