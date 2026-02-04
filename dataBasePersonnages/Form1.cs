@@ -31,6 +31,11 @@ namespace dataBasePersonnages
             cmbPouvoir.Items.Add("Télépathie");
         }
 
+        // Création d'un tableau pour stocker les personnages
+        Personnage[] lesPersonnages = new Personnage[100];
+        // Variable globale pour suivre le nombre de personnages ajoutés
+        int nbPersos = 0;
+
         #region Classes Personnage, Humain et Xmen
 
         public abstract class Personnage
@@ -131,7 +136,7 @@ namespace dataBasePersonnages
                 // Afficher les contrôles liés aux Humains
                 lblVie.Visible = true;
                 nudVie.Visible = true;
-                
+
                 // Masquer les contrôles liés aux Xmen
                 lblPouvoir.Visible = false;
                 cmbPouvoir.Visible = false;
@@ -153,5 +158,44 @@ namespace dataBasePersonnages
         }
 
         #endregion
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            if (radHumain.Checked)
+            {
+                if (txtLogin.Text == "")
+                {
+                    //Création d'un Humain inconnu
+                    Humain h = new Humain((int)nudVie.Value);
+                    lesPersonnages[nbPersos] = h;
+                    lstPersonnage.Items.Add(h.info());
+                }
+                else
+                {
+                    //Création d'un Humain
+                    Humain h = new Humain(txtLogin.Text, (int)nudVie.Value);
+                    lesPersonnages[nbPersos] = h;
+                    lstPersonnage.Items.Add(h.info());
+                }
+            }
+            else if (radXMen.Checked)
+            {
+                if (txtLogin.Text == "")
+                {
+                    //Création d'un Xmen inconnu
+                    Xmen x = new Xmen(cmbPouvoir.SelectedItem.ToString());
+                    lesPersonnages[nbPersos] = x;
+                    lstPersonnage.Items.Add(x.info());
+                }
+                else
+                {
+                    //Création d'un Xmen
+                    Xmen x = new Xmen(txtLogin.Text, cmbPouvoir.SelectedItem.ToString());
+                    lesPersonnages[nbPersos] = x;
+                    lstPersonnage.Items.Add(x.info());
+                }
+            }
+            nbPersos++;
+        }
     }
 }

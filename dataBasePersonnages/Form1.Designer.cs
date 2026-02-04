@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.gpbPersonnage = new System.Windows.Forms.GroupBox();
-            this.lstPersonnage = new System.Windows.Forms.ListBox();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.lblPouvoir = new System.Windows.Forms.Label();
-            this.cmbPouvoir = new System.Windows.Forms.ComboBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.radHumain = new System.Windows.Forms.RadioButton();
-            this.radXMen = new System.Windows.Forms.RadioButton();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.lblVie = new System.Windows.Forms.Label();
-            this.nudVie = new System.Windows.Forms.NumericUpDown();
             this.btnAjouter = new System.Windows.Forms.Button();
+            this.nudVie = new System.Windows.Forms.NumericUpDown();
+            this.lblVie = new System.Windows.Forms.Label();
+            this.radXMen = new System.Windows.Forms.RadioButton();
+            this.radHumain = new System.Windows.Forms.RadioButton();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.cmbPouvoir = new System.Windows.Forms.ComboBox();
+            this.lblPouvoir = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.lstPersonnage = new System.Windows.Forms.ListBox();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.gpbPersonnage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudVie)).BeginInit();
             this.SuspendLayout();
@@ -62,59 +62,32 @@
             this.gpbPersonnage.TabStop = false;
             this.gpbPersonnage.Text = "Créer un Personnage :";
             // 
-            // lstPersonnage
+            // btnAjouter
             // 
-            this.lstPersonnage.FormattingEnabled = true;
-            this.lstPersonnage.ItemHeight = 20;
-            this.lstPersonnage.Location = new System.Drawing.Point(12, 179);
-            this.lstPersonnage.Name = "lstPersonnage";
-            this.lstPersonnage.Size = new System.Drawing.Size(414, 364);
-            this.lstPersonnage.TabIndex = 0;
+            this.btnAjouter.Location = new System.Drawing.Point(322, 103);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(86, 52);
+            this.btnAjouter.TabIndex = 9;
+            this.btnAjouter.Text = "ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
             // 
-            // lblLogin
+            // nudVie
             // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(6, 43);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(50, 20);
-            this.lblLogin.TabIndex = 1;
-            this.lblLogin.Text = "login :";
+            this.nudVie.Location = new System.Drawing.Point(83, 106);
+            this.nudVie.Name = "nudVie";
+            this.nudVie.Size = new System.Drawing.Size(68, 26);
+            this.nudVie.TabIndex = 8;
+            this.nudVie.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lblPouvoir
+            // lblVie
             // 
-            this.lblPouvoir.AutoSize = true;
-            this.lblPouvoir.Location = new System.Drawing.Point(6, 75);
-            this.lblPouvoir.Name = "lblPouvoir";
-            this.lblPouvoir.Size = new System.Drawing.Size(68, 20);
-            this.lblPouvoir.TabIndex = 2;
-            this.lblPouvoir.Text = "pouvoir :";
-            // 
-            // cmbPouvoir
-            // 
-            this.cmbPouvoir.FormattingEnabled = true;
-            this.cmbPouvoir.Location = new System.Drawing.Point(83, 72);
-            this.cmbPouvoir.Name = "cmbPouvoir";
-            this.cmbPouvoir.Size = new System.Drawing.Size(215, 28);
-            this.cmbPouvoir.TabIndex = 3;
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.Location = new System.Drawing.Point(83, 41);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(215, 26);
-            this.txtLogin.TabIndex = 4;
-            // 
-            // radHumain
-            // 
-            this.radHumain.AutoSize = true;
-            this.radHumain.Location = new System.Drawing.Point(322, 42);
-            this.radHumain.Name = "radHumain";
-            this.radHumain.Size = new System.Drawing.Size(86, 24);
-            this.radHumain.TabIndex = 5;
-            this.radHumain.TabStop = true;
-            this.radHumain.Text = "humain";
-            this.radHumain.UseVisualStyleBackColor = true;
-            this.radHumain.CheckedChanged += new System.EventHandler(this.radHumain_CheckedChanged);
+            this.lblVie.AutoSize = true;
+            this.lblVie.Location = new System.Drawing.Point(6, 108);
+            this.lblVie.Name = "lblVie";
+            this.lblVie.Size = new System.Drawing.Size(36, 20);
+            this.lblVie.TabIndex = 7;
+            this.lblVie.Text = "vie :";
             // 
             // radXMen
             // 
@@ -128,35 +101,63 @@
             this.radXMen.UseVisualStyleBackColor = true;
             this.radXMen.CheckedChanged += new System.EventHandler(this.radXMen_CheckedChanged);
             // 
+            // radHumain
+            // 
+            this.radHumain.AutoSize = true;
+            this.radHumain.Location = new System.Drawing.Point(322, 42);
+            this.radHumain.Name = "radHumain";
+            this.radHumain.Size = new System.Drawing.Size(86, 24);
+            this.radHumain.TabIndex = 5;
+            this.radHumain.TabStop = true;
+            this.radHumain.Text = "humain";
+            this.radHumain.UseVisualStyleBackColor = true;
+            this.radHumain.CheckedChanged += new System.EventHandler(this.radHumain_CheckedChanged);
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Location = new System.Drawing.Point(83, 41);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(215, 26);
+            this.txtLogin.TabIndex = 4;
+            // 
+            // cmbPouvoir
+            // 
+            this.cmbPouvoir.FormattingEnabled = true;
+            this.cmbPouvoir.Location = new System.Drawing.Point(83, 72);
+            this.cmbPouvoir.Name = "cmbPouvoir";
+            this.cmbPouvoir.Size = new System.Drawing.Size(215, 28);
+            this.cmbPouvoir.TabIndex = 3;
+            // 
+            // lblPouvoir
+            // 
+            this.lblPouvoir.AutoSize = true;
+            this.lblPouvoir.Location = new System.Drawing.Point(6, 75);
+            this.lblPouvoir.Name = "lblPouvoir";
+            this.lblPouvoir.Size = new System.Drawing.Size(68, 20);
+            this.lblPouvoir.TabIndex = 2;
+            this.lblPouvoir.Text = "pouvoir :";
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Location = new System.Drawing.Point(6, 43);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(50, 20);
+            this.lblLogin.TabIndex = 1;
+            this.lblLogin.Text = "login :";
+            // 
+            // lstPersonnage
+            // 
+            this.lstPersonnage.FormattingEnabled = true;
+            this.lstPersonnage.ItemHeight = 20;
+            this.lstPersonnage.Location = new System.Drawing.Point(12, 179);
+            this.lstPersonnage.Name = "lstPersonnage";
+            this.lstPersonnage.Size = new System.Drawing.Size(414, 364);
+            this.lstPersonnage.TabIndex = 0;
+            // 
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
-            // 
-            // lblVie
-            // 
-            this.lblVie.AutoSize = true;
-            this.lblVie.Location = new System.Drawing.Point(6, 108);
-            this.lblVie.Name = "lblVie";
-            this.lblVie.Size = new System.Drawing.Size(36, 20);
-            this.lblVie.TabIndex = 7;
-            this.lblVie.Text = "vie :";
-            // 
-            // nudVie
-            // 
-            this.nudVie.Location = new System.Drawing.Point(83, 106);
-            this.nudVie.Name = "nudVie";
-            this.nudVie.Size = new System.Drawing.Size(68, 26);
-            this.nudVie.TabIndex = 8;
-            this.nudVie.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btnAjouter
-            // 
-            this.btnAjouter.Location = new System.Drawing.Point(322, 103);
-            this.btnAjouter.Name = "btnAjouter";
-            this.btnAjouter.Size = new System.Drawing.Size(86, 52);
-            this.btnAjouter.TabIndex = 9;
-            this.btnAjouter.Text = "ajouter";
-            this.btnAjouter.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
